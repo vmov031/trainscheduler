@@ -15,7 +15,7 @@
   
     var trainName = $("#train-name-input").val().trim();
     var destination = $("#destination-input").val().trim();
-    var firstTrain = moment($("#first-input").val().trim(), "hh:mm").format("X");
+    var firstTrain = moment($("#first-input").val().trim(), "hh:mm").format();
     var frequency = $("#frequency-input").val().trim();
 
    var newTrain = {
@@ -83,10 +83,10 @@
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
     var nextTrainPretty = moment(nextTrain).format("hh:mm");
+    var firstTimePretty = moment(firstTime).format("hh:mm");
 
 
 
   // Add each train's data into the table
-  $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
-  frequency + "</td><td>" + nextTrainPretty + "</td><td>" + minutesAway + "</td></tr>");
+  $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + firstTimePretty + "</td><td>"+ frequency + "</td><td>" + nextTrainPretty + "</td><td>" + minutesAway + "</td></tr>");
 });
